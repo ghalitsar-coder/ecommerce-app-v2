@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Inter:wght@200;300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply !font-Inter;
+  }
+  body::-webkit-scrollbar {
+    @apply w-2 h-1.5 bg-muted-accent-2 rounded-md hidden;
+  }
+  body::-webkit-scrollbar-thumb {
+    @apply hidden;
+  }
+  .path-class-style-1 {
+    @apply !fill-white;
+  }
+  svg .path-class-style-1 {
+    @apply !fill-white;
+  }
+  svg path.path-class-style-1 {
+    @apply !fill-white;
+  }
+}
+
+@layer utilities {
+  .required:after {
+    content: " *";
+    color: red;
+  }
+  .input__class-regular {
+    @apply bg-transparent border focus:ring-2 focus:border-transparent focus:ring-blue-accent-1 border-[#8D92A3] py-2.5 rounded-lg px-2 w-full placeholder:text-[#cdcdcd] outline-none placeholder:font-normal placeholder:text-sm transition duration-300 ease-in-out;
+  }
+
+  .label__class-regular {
+    @apply capitalize font-semibold text-lg leading-6;
+  }
+  .myborn_scrollbar::-webkit-scrollbar {
+    @apply w-2 h-2 bg-muted-accent-2 rounded-md;
+  }
+  .ghost_scrollbar::-webkit-scrollbar {
+    @apply w-2 h-2 bg-muted-accent-2 rounded-md hidden;
+  }
+  .myborn_scrollbar::-webkit-scrollbar-thumb {
+    @apply !cursor-pointer bg-blue-accent-1 rounded-md;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* For IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: red;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

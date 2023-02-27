@@ -26,6 +26,7 @@ module.exports = {
         'green-accent-3': '#249B45',
         'orange-accent-1': '#D39A0B',
         'orange-accent-2': '#FCB773',
+        'orange-accent-3': '#FBB977',
         'red-accent-1': '#C91717',
         'dark-accent-1': '#111821',
         'dark-accent-2': '#3E3E3E',

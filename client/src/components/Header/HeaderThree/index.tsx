@@ -2,6 +2,7 @@ import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { HiChevronDown } from "react-icons/hi";
 import { thirdHeader } from "../constants";
 import { CgMenuGridO } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 const HeaderThree = () => {
   return (
@@ -38,7 +39,9 @@ const HeaderThree = () => {
         <div className="h-full w-[1px] bg-slate-100/60" />
         <ul className="flex items-center gap-x-2 text-xs ">
           {thirdHeader?.map((item, idx) => (
-            <li key={idx}> {item.name} </li>
+            <li key={idx}>
+              <Link to={`/${item.path}`}>{item.name}</Link>
+            </li>
           ))}
         </ul>
       </div>

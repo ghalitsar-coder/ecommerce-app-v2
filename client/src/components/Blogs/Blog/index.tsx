@@ -1,14 +1,16 @@
 import { Image } from "@chakra-ui/react";
 import React from "react";
 
-type Props = {};
+type Props = {
+  item: string;
+};
 
 const Blog = (props: Props) => {
   return (
     <div className="bg-white lg:col-span-1 rounded-lg shadow-md overflow-hidden col-span-2 ">
       <div className="w-full bg-red-300">
         <Image
-          src={"images/blog-1.jpg"}
+          src={`images/${props?.item}`}
           className="w-full h-full object-cover"
         />
       </div>

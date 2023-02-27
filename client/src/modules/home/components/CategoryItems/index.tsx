@@ -3,8 +3,8 @@ import { sectionTwoData } from "modules/home/pages/Home/constant";
 import { Image } from "@chakra-ui/react";
 const CategoryItems = () => {
   return (
-    <div className="container bg-white rounded-lg shadow-md  px-3 my-14 ">
-      <div className=" flex items-center   flex-wrap gap-y-3    justify-between  md:px-0 ">
+    <div className="container bg-white rounded-lg shadow-md   my-14 p-1 ">
+      <div className=" flex items-center   flex-wrap gap-y-3    justify-between py-1 md:px-0 ">
         {sectionTwoData?.sectionTwoPartTwo.slice(0, 5)?.map((item, idx) => (
           <Fragment key={idx}>
             <Category {...item} />
@@ -15,7 +15,7 @@ const CategoryItems = () => {
         ))}
       </div>
       <div className="border-b border-slate-200 my-1 sm:my-0"></div>
-      <div className=" flex items-center  flex-wrap gap-y-3   justify-between  md:px-0   ">
+      <div className=" flex items-center  flex-wrap gap-y-3   justify-between  md:px-0 py-1  ">
         {sectionTwoData?.sectionTwoPartTwo.slice(5)?.map((item, idx) => (
           <Fragment key={idx}>
             <Category {...item} />

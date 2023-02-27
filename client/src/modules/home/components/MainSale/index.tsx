@@ -7,7 +7,7 @@ import React, { memo } from "react";
 const MainSale = () => {
   return (
     <div className="bg-white pb-4">
-      <div className="container grid md:grid-cols-4 px-3 md:px-0 gap-3  md:grid-flow-row   mt-10 ">
+      <div className="container grid md:grid-cols-4 px-3 md:px-0  gap-3  md:grid-flow-row   mt-10 ">
         <div className=" col-span-2 rounded-lg overflow-hidden   row-span-2 relative">
           <Slider config={configSectionOne}>
             {sliderData.slice(0, 2)?.map((item, idx) => (

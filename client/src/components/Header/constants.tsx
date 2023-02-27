@@ -23,7 +23,7 @@ export const rightSection = [
 export const thirdHeader = [
   {
     name: "Home",
-    path: "home",
+    path: "",
   },
   {
     name: "Our Store",
@@ -31,7 +31,7 @@ export const thirdHeader = [
   },
   {
     name: "Blogs",
-    path: "blog",
+    path: "blogs",
   },
   {
     name: "Contact",

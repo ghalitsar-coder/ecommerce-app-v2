@@ -1,11 +1,17 @@
-import React from 'react'
+import { ViewContact } from "modules/contact/pages";
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const Contact = (props: Props) => {
-  return (
-    <div>Contact</div>
-  )
-}
+  React.useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
+  return <ViewContact />;
+};
 
-export default Contact
+export default Contact;

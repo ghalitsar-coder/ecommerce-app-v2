@@ -31,6 +31,7 @@ const FamousProducts = (props: Props) => {
       <div className="grid grid-cols-4 gap-4 ">
         {famousProducts.map((item, idx) => (
           <div
+            key={idx}
             style={{
               backgroundImage: `url(images/famous-${++idx}.webp)`,
               objectFit: "cover",

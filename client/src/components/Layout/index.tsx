@@ -1,19 +1,31 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Header, Footer } from "components";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 type Props = {};
 
 const Layout = (props: Props) => {
-  return (
-    <>
-      <Header />
-      <main className=" overflow-hidden ">
-        <Outlet />
-      </main>
-      <Footer />
-    </>
-  );
+  const location = useLocation();
+
+  const renderLayout = useMemo(() => {
+    let layout;
+    if (location.pathname.startsWith("/auth")) {
+      layout = <Outlet />;
+    } else {
+      layout = (
+        <>
+          <Header />
+          <main className=" ">
+            <Outlet />
+          </main>
+          <Footer />
+        </>
+      );
+    }
+    return layout;
+  }, [location.pathname]);
+
+  return renderLayout;
 };
 
 export default Layout;

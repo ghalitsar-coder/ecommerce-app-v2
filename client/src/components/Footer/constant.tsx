@@ -17,7 +17,7 @@ export const sectionTwo = {
     { label: "Refund Policy", path: "somewhere" },
     { label: "Shipping Policy", path: "somewhere" },
     { label: "Term of services", path: "somewhere" },
-    { label: "Blog", path: "somewhere" },
+    { label: "Icon by Icon8", path: "https://icons8.com/" },
   ],
   account: [
     { label: "Search", path: "somewhere" },

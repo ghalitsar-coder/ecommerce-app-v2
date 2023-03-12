@@ -12,7 +12,7 @@ const Stars = (props: Props) => {
       onChange={(e) => {
         console.log("changed ->", e);
       }}
-      size={24}
+      size={19}
       edit={false}
       value={4}
       a11y={true}

@@ -7,17 +7,17 @@ export const rightSection = [
   {
     name: "Compare products",
     icon: <SlRefresh />,
-    path: "path",
+    path: "compare-product",
   },
   {
     name: "Favourite Wishlist",
     icon: <MdFavorite />,
-    path: "path",
+    path: "wishlist",
   },
   {
     name: "Sign in",
     icon: <AiOutlineUser />,
-    path: "path",
+    path: "auth",
   },
 ];
 export const thirdHeader = [

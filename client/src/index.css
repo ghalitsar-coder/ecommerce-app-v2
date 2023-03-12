@@ -31,7 +31,11 @@
     color: red;
   }
   .input__class-regular {
-    @apply bg-transparent border focus:ring-2 focus:border-transparent focus:ring-blue-accent-1 border-[#8D92A3] py-2.5 rounded-lg px-2 w-full placeholder:text-[#cdcdcd] outline-none placeholder:font-normal placeholder:text-sm transition duration-300 ease-in-out;
+    @apply bg-transparent border focus:ring-2 focus:border-transparent focus:ring-orange-accent-2 border-[#8D92A3] py-1.5 rounded-lg px-2 w-full placeholder:text-slate-400 outline-none placeholder:font-normal placeholder:text-sm transition duration-300 ease-in-out;
+  }
+
+  .input__class-borderless {
+    @apply !border-transparent focus:ring-transparent input__class-regular;
   }
 
   .label__class-regular {
@@ -51,6 +55,31 @@
   }
   .basic__transition {
     @apply transition-all  duration-300 ease-in-out;
+  }
+  .basic__border {
+    @apply border border-slate-200/75;
+  }
+  .basic__button {
+    @apply border   basic__transition py-2.5 rounded-xl text-white font-semibold;
+  }
+  .basic__button-contained {
+    @apply hover:bg-transparent basic__button;
+  }
+  .basic__button-outline {
+    @apply hover:bg-transparent basic__button;
+  }
+
+  .basic__button-red {
+    @apply basic__button-contained bg-red-accent-2  hover:border-red-accent-2 hover:text-red-accent-2;
+  }
+  .basic__button-green {
+    @apply basic__button-contained bg-green-accent-4  hover:border-green-accent-4 hover:text-green-accent-4;
+  }
+  .basic__button-dark {
+    @apply basic__button-contained bg-dark-accent-3  hover:border-dark-accent-3 hover:text-dark-accent-3;
+  }
+  .basic__button-orange {
+    @apply basic__button-contained bg-orange-accent-3  hover:border-orange-accent-3 hover:text-orange-accent-3;
   }
 
   /* For IE, Edge and Firefox */

@@ -1,12 +1,16 @@
 import Blog from "./Blog";
 
-const Blogs = () => {
+type Props = {
+  title?: string;
+};
+
+const Blogs = ({ title }: Props) => {
   return (
     <section
       id="blogs"
       className="container overflow-hidden py-4 px-3 md:px-0 my-10"
     >
-      <h1 className="mb-5 font-semibold text-2xl">Our Latest Blog</h1>
+      {title && <h1 className="mb-5 font-semibold text-2xl">{title}</h1>}
       <div className="grid grid-cols-4 gap-5 ">
         {["blog-3.webp", "blog-1.jpg", "blog-4.webp", "blog-3.webp"].map(
           (item, idx) => (

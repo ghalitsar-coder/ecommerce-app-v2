@@ -1,9 +1,17 @@
+import { ViewOurStore } from "modules/our-store/pages";
 import React from "react";
 
 type Props = {};
 
 const OurStore = (props: Props) => {
-  return <div>OurStore</div>;
+  React.useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
+  return <ViewOurStore />;
 };
 
 export default OurStore;

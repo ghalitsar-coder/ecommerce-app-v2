@@ -1,5 +1,6 @@
 import { Image } from "@chakra-ui/react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   item?: string;
@@ -7,6 +8,7 @@ type Props = {
 };
 
 const Blog = ({ className, item }: Props) => {
+  const navigate = useNavigate();
   return (
     <div
       className={`bg-white group rounded-lg shadow-md overflow-hidden  ${
@@ -26,7 +28,10 @@ const Blog = ({ className, item }: Props) => {
           Porttitor proin sollicitudin consectetur enim tempor pharetra mollis
           inceptos. Feugiat nisl ut tortor eros nascetur senectus.
         </p>
-        <button className="rounded-full mt-3 w-fit px-5 !text-xs lg:text-sm py-2 bg-dark-accent-3 uppercase text-white ">
+        <button
+          onClick={() => navigate(`/blogs/${1}`)}
+          className="rounded-full mt-3 w-fit px-5 !text-xs lg:text-sm py-2 bg-dark-accent-3 uppercase text-white "
+        >
           Read More
         </button>
       </div>

@@ -1,4 +1,4 @@
-import { Badge, Image } from "@chakra-ui/react";
+import { Badge, Image, useToast, UseToastOptions } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { AiFillEye, AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { BsStarHalf } from "react-icons/bs";
@@ -6,16 +6,38 @@ import { FaShoppingCart } from "react-icons/fa";
 import { MdFavorite, MdOutlineFavorite } from "react-icons/md";
 import { BiGitCompare } from "react-icons/bi";
 import Stars from "components/Stars";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { is } from "immer/dist/internal";
+import { getToastLoad } from "utils/hooks";
 
 type Props = {
   item?: string;
   className?: string;
 };
 
+const arrOfIcons = [
+  {
+    path: "cart",
+    icon: <FaShoppingCart className="fill-orange-500 basic__transition  " />,
+  },
+  {
+    path: "detail",
+    icon: <AiFillEye className="fill-orange-500 basic__transition  " />,
+  },
+  {
+    path: "wish-list",
+    icon: <MdOutlineFavorite className="fill-orange-500 basic__transition  " />,
+  },
+  {
+    path: "compare",
+    icon: <BiGitCompare className="fill-orange-500 basic__transition  " />,
+  },
+];
+
 const Card = (props: Props) => {
   const { item, className } = props;
   const router = useLocation();
+  const navigate = useNavigate();
   console.log(`THIS IS   router:`, router);
   const [isFavourite, setIsFavourite] = useState(false);
   React.useEffect(() => {
@@ -23,6 +45,28 @@ const Card = (props: Props) => {
       setIsFavourite(true);
     }
   }, [router.pathname]);
+  const toast = useToast();
+
+  const listIcons = React.useMemo(() => {
+    if (isFavourite) {
+      return arrOfIcons.filter((item) => item.path !== "wish-list");
+    }
+    return arrOfIcons;
+  }, [isFavourite]);
+
+  const handleClickIcon = (type: string, productId: string | number) => {
+    if (type === "detail") {
+      navigate(`/products/${productId}`);
+    }
+    if (type === "compare" || type === "wish-list" || type === "cart") {
+      toast(
+        getToastLoad(
+          "Product Berhasil masuk " + type,
+          "success"
+        ) as UseToastOptions
+      );
+    }
+  };
 
   return (
     <div
@@ -32,7 +76,7 @@ const Card = (props: Props) => {
     >
       <div className="flex justify-between items-center py-2.5 p-2 ">
         <Badge className="!rounded-md !bg-orange-accent-3 ">30%</Badge>
-        <button
+        {/* <button
           className="ml-auto "
           onClick={() => setIsFavourite((prev) => !prev)}
         >
@@ -41,7 +85,7 @@ const Card = (props: Props) => {
               isFavourite ? "fill-red-600" : "fill-slate-400/80"
             }`}
           />
-        </button>
+        </button> */}
       </div>
       <div className="h-40   relative group">
         <Image
@@ -49,30 +93,21 @@ const Card = (props: Props) => {
           alt="image-product"
           className="w-full h-full object-contain"
         />
-        <div className="absolute  cursor-pointer   basic__transition opacity-0 group-hover:opacity-100  grid justify-end items-center inset-0 bg-black/75">
+        <div className="absolute   basic__transition opacity-0 group-hover:opacity-100  grid justify-end items-center inset-0 bg-black/75">
           <ul className="grid   group  justify-evenly pr-1  h-[85%]    ">
-            {[
-              <FaShoppingCart className="fill-orange-500 basic__transition  " />,
-              <AiFillEye className="fill-orange-500 basic__transition  " />,
-              !isFavourite ? (
-                <MdOutlineFavorite className="fill-orange-500 basic__transition  " />
-              ) : null,
-              <BiGitCompare className="fill-orange-500 basic__transition  " />,
-            ]
-              .filter(Boolean)
-              .map((item, idx) => (
-                <li
-                  className=" translate-x-4 group-hover:translate-x-0 basic__transition group-hover:delay-100  grid place-items-center w-fit opacity-0 group-hover:opacity-100"
-                  key={idx}
+            {listIcons.map((item, idx) => (
+              <li
+                className=" translate-x-4 group-hover:translate-x-0 basic__transition group-hover:delay-100  grid place-items-center w-fit opacity-0 group-hover:opacity-100"
+                key={idx}
+              >
+                <button
+                  onClick={() => handleClickIcon(item.path, ++idx)}
+                  className="basic__transition w-fit p-1 rounded-full hover:bg-orange-200 [&:hover>svg]:fill-red-300"
                 >
-                  <button
-                    onClick={() => alert(idx)}
-                    className="basic__transition w-fit p-1 rounded-full hover:bg-orange-200 [&:hover>svg]:fill-red-300"
-                  >
-                    {item}
-                  </button>
-                </li>
-              ))}
+                  {item.icon}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

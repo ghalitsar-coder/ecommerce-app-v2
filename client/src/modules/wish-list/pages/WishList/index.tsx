@@ -7,7 +7,7 @@ const WishList = () => {
         <h1 className="font-semibold text-2xl">Semua Wishlist</h1>
       </div>
       <div className="grid grid-cols-12 gap-5 ">
-        <SectionFilter />
+        <SectionFilter  />
         <WishlistItem />
       </div>
     </section>

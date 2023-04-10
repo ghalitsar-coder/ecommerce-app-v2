@@ -31,7 +31,9 @@ const FormContact = () => {
         ))}
         <Button
           text={"Submit"}
-          buttonClass={"py-1.5 w-fit px-7"}
+          buttonType="contained"
+          color="dark"
+          buttonClass={"!py-1.5 w-fit px-7 !rounded-full"}
           rounded={"full"}
         />
       </div>

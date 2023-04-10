@@ -16,22 +16,36 @@ type Props = {
   children: React.ReactNode;
   config?: any;
   className?: string;
+  loop?: boolean;
+  autoPlay?:
+    | {
+        delay: number;
+        disableOnInteraction: boolean;
+      }
+    | boolean
+    | undefined;
 };
 
 export default function Slider(props: Props) {
-  const { children, config, className } = props;
+  const {
+    children,
+    config,
+    className,
+    autoPlay = {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop = true,
+  } = props;
   return (
     <>
       <Swiper
         slidesPerView={config?.slidesPerView || 1}
         spaceBetween={config?.spaceBetween || 0}
         pagination={config?.pagination || false}
-        loop={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        breakpoints={config?.breakpoints || {}}
+        loop={loop}
+        autoplay={autoPlay}
+        breakpoints={config?.breakpoints || false}
         modules={[Autoplay, Pagination]}
         className={`${className} `}
       >

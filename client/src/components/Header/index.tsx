@@ -24,7 +24,7 @@ const Header = (props: Props) => {
       <div
         className={`absolute  basic__transition pointer-events-auto  ${
           isOpen || isOpenSearchBox
-            ? "bg-black/75 top-full bottom-0 w-[100%]  h-screen  "
+            ? "bg-black/75 top-full bottom-0 w-[100%]   h-screen  "
             : ""
         } `}
       ></div>

@@ -17,9 +17,11 @@ import {
 } from "modules/wish-list/pages/WishList/constants";
 import { useState } from "react";
 
-type Props = {};
+type Props = {
+  className?:string
+};
 
-const Filter = (props: Props) => {
+const Filter = ({className='lg:col-span-3 col-span-12 '}: Props) => {
   const [currentFilter, setCurrentFilter] = useState<
     Partial<CurrentFilterProps>
   >({
@@ -57,7 +59,7 @@ const Filter = (props: Props) => {
       }
     };
   return (
-    <div className="lg:col-span-3 col-span-12 ">
+    <div className={`${className}`}>
       <h1 className="font-semibold  mb-9 ">Filter</h1>
 
       <Accordion

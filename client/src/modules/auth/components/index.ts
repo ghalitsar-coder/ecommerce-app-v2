@@ -4,3 +4,4 @@ export { default as InputFieldsAuth } from "./InputFieldsAuth";
 export { default as DetailAuth } from "./DetailAuth";
 export { default as BasicModal } from "../../../components/BasicModal";
 export { default as ForgotPasswordModal } from "./ForgotPasswordModal";
+export { default as ResetPasswordModal } from "./ResetPasswordModal";

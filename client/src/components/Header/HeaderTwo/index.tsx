@@ -38,7 +38,7 @@ const HeaderTwo = ({
             onOpenSearchBox();
           }}
           ref={wrapperRef}
-          className="flex basic__transition focus-within:ring focus-within:ring-orange-accent-2 items-center w-full max-w-4xl justify-between bg-white  h-9 flex-1 relative rounded-lg"
+          className="flex basic__transition focus-within:ring focus-within:ring-orange-accent-2 items-center w-full max-w-4xl justify-between bg-white   h-9 flex-1 relative rounded-lg"
         >
           <input
             type="text"

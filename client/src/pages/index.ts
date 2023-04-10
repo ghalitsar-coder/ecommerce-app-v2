@@ -5,3 +5,8 @@ export { default as BlogsPage } from "./Blogs";
 export { default as CompareProducts } from "./CompareProduct";
 export { default as WishList } from "./Wishlist";
 export { default as Auth } from "./Auth";
+export { default as Cart } from "./Cart";
+export { default as Checkout } from "./Checkout";
+export { default as ResetPassword } from "./Auth/reset-password";
+export { default as DetailBlog } from "./Blogs/detail-blog";
+export { default as DetailProduct } from "./OurStore/DetailProduct";

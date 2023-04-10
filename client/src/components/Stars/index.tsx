@@ -3,18 +3,22 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { BsStarHalf } from "react-icons/bs";
 import ReactStars from "react-rating-stars-component";
 
-type Props = {};
+type Props = {
+  count?: number;
+  value?: number;
+  size?: number;
+};
 
-const Stars = (props: Props) => {
+const Stars = ({ count = 5, value = 4, size = 19 }: Props) => {
   return (
     <ReactStars
-      count={5}
-      onChange={(e) => {
+      count={count}
+      onChange={(e: any) => {
         console.log("changed ->", e);
       }}
-      size={19}
+      size={size}
       edit={false}
-      value={4}
+      value={value}
       a11y={true}
       isHalf={true}
       emptyIcon={<AiOutlineStar />}

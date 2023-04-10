@@ -63,10 +63,10 @@
     @apply border   basic__transition py-2.5 rounded-xl text-white font-semibold;
   }
   .basic__button-contained {
-    @apply hover:bg-transparent basic__button;
+    @apply hover:bg-transparent basic__button border-transparent ;
   }
-  .basic__button-outline {
-    @apply hover:bg-transparent basic__button;
+  .basic__button-outlined {
+    @apply basic__button;
   }
 
   .basic__button-red {
@@ -79,7 +79,17 @@
     @apply basic__button-contained bg-dark-accent-3  hover:border-dark-accent-3 hover:text-dark-accent-3;
   }
   .basic__button-orange {
-    @apply basic__button-contained bg-orange-accent-3  hover:border-orange-accent-3 hover:text-orange-accent-3;
+    @apply basic__button-contained bg-orange-400  hover:border-orange-400 hover:text-orange-400;
+  }
+  .basic__button-gray {
+    @apply basic__button-contained bg-gray-600  hover:border-gray-600 hover:text-gray-600;
+  }
+
+  .basic__button-gray-outlined {
+    @apply basic__button-outlined border-gray-600 !text-gray-600 hover:bg-gray-600 hover:!text-white;
+  }
+  .basic__button-orange-outlined {
+    @apply basic__button-outlined border-orange-400 !text-orange-400 hover:bg-orange-400 hover:!text-white;
   }
 
   /* For IE, Edge and Firefox */

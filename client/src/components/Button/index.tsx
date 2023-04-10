@@ -12,7 +12,7 @@ interface ButtonProps {
   buttonType?: string;
   disabled?: boolean;
   loading?: boolean;
-  color?: "green" | "red" | "orange" | "dark";
+  color?: "green" | "red" | "orange" | "dark" | "gray";
 }
 
 const outlined =
@@ -62,8 +62,11 @@ const Button = ({
         case "dark":
           colorAndType = "basic__button-dark";
           break;
+        case "gray":
+          colorAndType = "basic__button-gray-outlined";
+          break;
         default:
-          colorAndType = "basic__button-orange";
+          colorAndType = "basic__button-orange-outlined";
           break;
       }
     }
@@ -73,7 +76,7 @@ const Button = ({
   return (
     <button
       className={`${buttonClass} ${props.disabled && disabledButton} ${
-        props?.rounded ? `rounded-${props?.rounded}` : "rounded-md"
+        props?.rounded ? `rounded-${props?.rounded}` : "!rounded-md"
       }  ${renderColorAndType}
   `}
       {...props}

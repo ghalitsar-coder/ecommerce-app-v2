@@ -27,7 +27,7 @@ export const thirdHeader = [
   },
   {
     name: "Our Store",
-    path: "our-store",
+    path: "products",
   },
   {
     name: "Blogs",

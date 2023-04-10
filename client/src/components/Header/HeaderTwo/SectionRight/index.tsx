@@ -1,4 +1,5 @@
 import {
+  IconButton,
   Popover,
   PopoverArrow,
   PopoverBody,
@@ -10,6 +11,7 @@ import {
 import { rightSection } from "components/Header/constants";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import CartDrawer from "./CartDrawer";
 
 const SectionRight = ({
   onOpen,
@@ -24,7 +26,7 @@ const SectionRight = ({
   };
 
   return (
-    <ul className="flex items-center z-[5]  gap-x-5">
+    <ul className="flex items-center   gap-x-5">
       {rightSection?.map((item, idx) => (
         <li key={+idx} className="flex items-center gap-x-2">
           <Popover
@@ -37,17 +39,22 @@ const SectionRight = ({
               return (
                 <>
                   <PopoverTrigger>
-                    <button
+                    <IconButton
+                      size={"sm"}
+                      variant="unstyled"
+                      className={
+                        "hover:bg-white/25 hover:backdrop-blur-sm flex  [&>svg]:m-auto  [&:hover>svg]:fill-orange-accent-3"
+                      }
                       onClick={(e) => {
                         e.stopPropagation();
                         navigate(item.path);
                         close();
                       }}
-                    >
-                      {item.icon}
-                    </button>
+                      aria-label="Search database"
+                      icon={item.icon}
+                    />
                   </PopoverTrigger>
-                  <PopoverContent className=" !translate-y-2.5 text-dark">
+                  <PopoverContent className="z-[3] !translate-y-2.5 text-dark">
                     <PopoverHeader>Confirmation!</PopoverHeader>
                     <PopoverBody>Are you sure you want</PopoverBody>
                   </PopoverContent>
@@ -57,17 +64,7 @@ const SectionRight = ({
           </Popover>
         </li>
       ))}
-      <li className="flex items-center gap-x-2">
-        <span>
-          <AiOutlineShoppingCart />
-        </span>
-        <div className="text-xs">
-          <p className="text-center bg-white rounded-xl w-fit px-1 mx-auto text-dark">
-            0
-          </p>
-          $0.00
-        </div>
-      </li>
+      <CartDrawer />
     </ul>
   );
 };

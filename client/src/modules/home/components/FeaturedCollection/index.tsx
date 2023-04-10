@@ -1,6 +1,4 @@
-import Cards from "components/Cards";
 import Card from "components/Cards/Card";
-import React from "react";
 
 type Props = {};
 

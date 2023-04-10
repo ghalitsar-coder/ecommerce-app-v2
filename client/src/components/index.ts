@@ -11,5 +11,7 @@ export { default as HeaderOne } from "./Header/HeaderOne";
 export { default as HeaderTwo } from "./Header/HeaderTwo";
 export { default as HeaderThree } from "./Header/HeaderThree";
 export { default as Cards } from "./Cards";
+export { default as Breadcrumb } from "./Breadcrumb";
 export { default as ResponsiveCards } from "./ResponsiveCards";
+export { default as FilterSelect } from "./FilterSelect";
 export { default as Card } from "./Cards/Card";

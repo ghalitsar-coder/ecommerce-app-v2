@@ -24,7 +24,6 @@ type BasicModalProps = {
 };
 const BasicModal = ({
   isOpen,
-  title,
   onClose,
   initialRef,
   finalRef,
@@ -37,7 +36,7 @@ const BasicModal = ({
         finalFocusRef={finalRef}
         isOpen={isOpen}
         onClose={onClose}
-        size={"2xl"}
+        size={"xl"}
       >
         <ModalOverlay />
         {children}

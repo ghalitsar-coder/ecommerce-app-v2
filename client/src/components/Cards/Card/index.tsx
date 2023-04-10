@@ -38,7 +38,6 @@ const Card = (props: Props) => {
   const { item, className } = props;
   const router = useLocation();
   const navigate = useNavigate();
-  console.log(`THIS IS   router:`, router);
   const [isFavourite, setIsFavourite] = useState(false);
   React.useEffect(() => {
     if (router.pathname.startsWith("/wishlist")) {

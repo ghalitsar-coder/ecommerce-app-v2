@@ -43,7 +43,6 @@ const CartContent = (props: Props) => {
       return newData;
     },
   });
-  console.log(`THIS IS   data:`, data);
 
   const renderContentProducts = React.useMemo(() => {
     if (!Object.keys(data || {}).length) {

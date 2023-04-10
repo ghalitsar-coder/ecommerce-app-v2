@@ -14,7 +14,7 @@ const Stars = ({ count = 5, value = 4, size = 19 }: Props) => {
     <ReactStars
       count={count}
       onChange={(e: any) => {
-        console.log("changed ->", e);
+        // console.log("changed ->", e);
       }}
       size={size}
       edit={false}

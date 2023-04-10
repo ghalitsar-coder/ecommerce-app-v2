@@ -7,7 +7,6 @@ const DetailAuth = ({ onOpen }: { onOpen(): void }) => {
   const [formField, setFormField] = React.useState<FormField | undefined | {}>(
     {}
   );
-  console.log(`THIS IS   formField:`, formField);
   const [isLogin, setIsLogin] = React.useState(true);
 
   const handleForm = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -66,7 +66,6 @@ const DetailAnotherOffers = ({
   btn?: ReactJSXElement | string;
   icon: ReactJSXElement;
 }) => {
-  console.log(`THIS IS   desc:`, typeof desc);
   return (
     <div className="border-b pb-5">
       <h1 className="text-lg font-semibold mb-1.5">{title}</h1>

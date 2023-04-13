@@ -1,7 +1,7 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import axios, { AxiosResponse } from "axios";
 import React from "react";
-import { CartContent, Datum, ProductList } from "types/cart";
+import { Datum, ProductList } from "types/cart";
 import CartItems from "./CartItems";
 
 type Props = {};

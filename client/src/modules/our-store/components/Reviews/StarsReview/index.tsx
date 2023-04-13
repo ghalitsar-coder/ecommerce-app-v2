@@ -65,7 +65,7 @@ const StarsReview = (props: Props) => {
                 <h3 className="text-gray-500 text-md">{item}</h3>
               </div>
               <Progress
-                size={"lg"}
+                size={"xs"}
                 className="flex-1 [&>div]:bg-orange-300 rounded-full "
                 value={Number(`${Number(item)}0`)}
                 // colorScheme="orange"

@@ -10,7 +10,7 @@ const Colors = ({ handleFilter, currentFilter }: Props) => {
   const [arrOfColors, setArrOfColors] = React.useState<Array<Color>>([]);
 
   React.useEffect(() => {
-    const arr = [];
+    const arr: Color[] = [];
     for (let i = 0; i < 32; i++) {
       const randomColor =
         "#" + Math.floor(Math.random() * 16777215).toString(16);

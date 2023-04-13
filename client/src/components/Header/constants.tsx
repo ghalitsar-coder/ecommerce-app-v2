@@ -1,9 +1,14 @@
-import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineUser,AiOutlineShoppingCart } from "react-icons/ai";
 import { MdFavorite } from "react-icons/md";
 import { SlRefresh } from "react-icons/sl";
 
 export const links = ["Hotline +62 81223378021"];
 export const rightSection = [
+  {
+    name: "Cart",
+    icon: <AiOutlineShoppingCart />,
+    path: "cart",
+  },
   {
     name: "Compare products",
     icon: <SlRefresh />,

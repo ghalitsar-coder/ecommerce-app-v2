@@ -39,8 +39,8 @@ const Thumbnail = (props: Props) => {
   }, []);
 
   return (
-    <div className="lg:col-span-2 rounded-xl ">
-      <div className="">
+    <div className="lg:col-span-2  rounded-xl ">
+      <div className="sticky top-52">
         <div className="  mb-4 ">
           <Image
             src={

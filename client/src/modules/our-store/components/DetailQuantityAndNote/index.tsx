@@ -28,7 +28,7 @@ const DetailQuantityAndNote = (props: Props) => {
   const [quantity, setQuantity] = useState(1);
   let price = 855000;
   return (
-    <div className="lg:col-span-2   rounded-xl basic__border p-5 h-fit ">
+    <div className="lg:col-span-2 lg:sticky lg:top-52   rounded-xl basic__border p-5 h-fit ">
       <h1 className="font-bold mb-5 text-lg ">Atur jumlah dan catatan</h1>
       <div className="grid gap-y-4">
         <Quantity quantity={quantity} setQuantity={setQuantity} />

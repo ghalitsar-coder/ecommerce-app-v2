@@ -3,7 +3,6 @@ import { Card } from "components";
 import Meta from "components/Meta";
 import {
   Availability,
-  Cards,
   Colors,
   PopularProducts,
   Prices,

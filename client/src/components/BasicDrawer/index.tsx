@@ -8,8 +8,23 @@ import {
   DrawerOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
-function BasicDrawer({ isOpen, onClose, btnRef,children ,title }) {
+import React, { ReactNode } from "react";
+type DrawerProps = {
+  isOpen: boolean;
+  title: string;
+  onClose(): void;
+  children: ReactNode;
+  btnRef: any
+  ;
+};
+
+function BasicDrawer({
+  isOpen,
+  onClose,
+  btnRef,
+  children,
+  title,
+}: DrawerProps) {
   return (
     <>
       <Drawer
@@ -23,9 +38,7 @@ function BasicDrawer({ isOpen, onClose, btnRef,children ,title }) {
           <DrawerCloseButton />
           <DrawerHeader>{title}</DrawerHeader>
 
-          <DrawerBody>
-            {children}
-          </DrawerBody>
+          <DrawerBody>{children}</DrawerBody>
 
           {/* <DrawerFooter>
               <Button variant='outline' mr={3} onClick={onClose}>

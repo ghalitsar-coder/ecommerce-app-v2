@@ -2,11 +2,11 @@ import React from "react";
 import { HiChevronRight } from "react-icons/hi";
 
 type Props = {
-  setShowFilter: any;
-  setCurrentFilter: any;
-  currentFilter: any;
-  showFilter: any;
-  data: any;
+  setShowFilter: (value: boolean | ((prev: boolean) => boolean)) => void;
+  setCurrentFilter(value: string): void;
+  currentFilter: string;
+  showFilter: boolean;
+  data: string[];
   filterRef: any;
 };
 
@@ -45,7 +45,7 @@ const FilterSelect = ({
               : "opacity-0 -z-[1]  max-h-0 "
           } `}
         >
-          {data?.map((item, idx) => (
+          {data?.map((item: string, idx: number) => (
             <li
               key={idx}
               onClick={(e) => {

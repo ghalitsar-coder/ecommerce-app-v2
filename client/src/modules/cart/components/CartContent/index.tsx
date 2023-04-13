@@ -1,18 +1,14 @@
-import { Checkbox, Image, Stack } from "@chakra-ui/react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
-import Note from "modules/our-store/components/DetailQuantityAndNote/Note";
-import Quantity from "modules/our-store/components/DetailQuantityAndNote/Quantity";
+import axios, { AxiosResponse } from "axios";
 import React from "react";
-import { BiTrash } from "react-icons/bi";
-import { constructImageUrl } from "utils/hooks";
+import { CartContent, Datum, ProductList } from "types/cart";
 import CartItems from "./CartItems";
 
 type Props = {};
 
 const getCartData = async () => {
   try {
-    const token = `Bearer EXbeG27MDk1H6IOzCrF6E5lwpU530qQO`;
+    const token = `Bearer PN9NVKWH4mRCOxN4jELDgcZfrcZhU8X3`;
     return await axios.get(
       `${import.meta.env.VITE_API_BASE_URL}/api/v1/catalog/cart`,
       { headers: { Authorization: token } }
@@ -26,13 +22,13 @@ const CartContent = (props: Props) => {
   const queryClient = useQueryClient();
   // Queries
   const { data } = useQuery({
-    queryKey: ["cart-data-list"],
+    queryKey: ["cart-data-list"] as const,
     queryFn: getCartData,
     select: (res) => {
       const newData = res?.data?.data
-        ?.map((item) => item?.productList)
+        ?.map((item: Datum) => item?.productList)
         .flat(Infinity)
-        .reduce((obj, key) => {
+        .reduce((obj: { [key: string]: ProductList[] }, key: any) => {
           if (!obj?.[key?.storeName]) {
             obj[key?.storeName] = [key];
           } else {
@@ -40,6 +36,7 @@ const CartContent = (props: Props) => {
           }
           return obj;
         }, {});
+
       return newData;
     },
   });
@@ -55,8 +52,7 @@ const CartContent = (props: Props) => {
     );
   }, [data]);
 
-  return  renderContentProducts 
+  return renderContentProducts;
 };
 
 export default CartContent;
-

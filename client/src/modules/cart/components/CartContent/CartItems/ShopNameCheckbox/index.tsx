@@ -2,7 +2,14 @@ import { Checkbox } from "@chakra-ui/react";
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-type Props = {};
+type Props = {
+  setCheckedItems(value: boolean[]): void;
+  allChecked: boolean;
+  isIndeterminate: boolean;
+  shop: string;
+  location: string;
+  idx: number;
+};
 
 const ShopNameCheckbox = ({
   allChecked,

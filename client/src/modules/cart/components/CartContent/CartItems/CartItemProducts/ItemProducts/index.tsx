@@ -4,10 +4,10 @@ import { useLocation } from "react-router-dom";
 import { constructImageUrl } from "utils/hooks";
 
 type Props = {
-  checkedItems: any;
-  setCheckedItems: any;
-  i: any;
-  item: any;
+  checkedItems: boolean[];
+  setCheckedItems: (value: boolean[]) => void;
+  i: number;
+  item: { [key: string]: any };
 };
 
 const ItemProducts = ({ checkedItems, setCheckedItems, i, item }: Props) => {

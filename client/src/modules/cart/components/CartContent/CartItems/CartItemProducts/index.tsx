@@ -5,9 +5,9 @@ import { useLocation } from "react-router-dom";
 
 type Props = {
   data: any;
-  shop: any;
-  checkedItems: any;
-  setCheckedItems: any;
+  shop: string;
+  checkedItems: boolean[];
+  setCheckedItems: (value: boolean[]) => void;
 };
 
 const CartItemProducts = ({

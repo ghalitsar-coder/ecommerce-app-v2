@@ -40,8 +40,8 @@ const reviews = [
 
 const Reviews = (props: Props) => {
   const [images, setImages] = React.useState<ReviewImageProps[] | []>([]);
-  const [currentFilter, setCurrentFilter] = React.useState<string | null>(null);
-  const [showFilter, setShowFilter] = React.useState(false);
+  const [currentFilter, setCurrentFilter] = React.useState<string>("");
+  const [showFilter, setShowFilter] = React.useState<boolean>(false);
   const filterRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
@@ -122,8 +122,9 @@ const Reviews = (props: Props) => {
                           <GoKebabVertical />
                         </MenuButton>
                         <MenuList>
-                          <p className='text-sm pl-2 hover:bg-slate-200 py-2 cursor-pointer' >Laporkan Ulasan</p>
-                        
+                          <p className="text-sm pl-2 hover:bg-slate-200 py-2 cursor-pointer">
+                            Laporkan Ulasan
+                          </p>
                         </MenuList>
                       </Menu>
                     </div>

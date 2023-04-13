@@ -67,8 +67,7 @@ const StarsReview = (props: Props) => {
               <Progress
                 size={"lg"}
                 className="flex-1 [&>div]:bg-orange-300 rounded-full "
-                value={`${Number(item)}0`}
-                size="xs"
+                value={Number(`${Number(item)}0`)}
                 // colorScheme="orange"
               />
               <p className="w-8 mx-auto text-gray-500 text-sm text-center">

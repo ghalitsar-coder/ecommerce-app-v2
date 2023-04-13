@@ -20,7 +20,7 @@ export const getToastLoad = (desc: string, status: string) => {
       };
   }
 };
-export const isValidUrl = (urlString) => {
+export const isValidUrl = (urlString: string) => {
   const inputElement = document.createElement("input");
   inputElement.type = "url";
   inputElement.value = urlString;
@@ -31,7 +31,7 @@ export const isValidUrl = (urlString) => {
   return true;
 };
 
-export const constructImageUrl = (url:string) => {
+export const constructImageUrl = (url: string) => {
   if (url?.includes("https")) {
     return url;
   }

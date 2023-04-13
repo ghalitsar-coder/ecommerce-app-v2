@@ -1,6 +1,5 @@
 /* eslint-disable consistent-return */
 /* eslint-disable react/require-default-props */
-import Image from "next/image";
 import React from "react";
 
 function TextField({
